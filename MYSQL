@@ -1,0 +1,18 @@
+CREATE DATABASE Batcadastro;
+
+USE Batcadastro;
+
+CREATE TABLE perfilusuario (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(32) NOT NULL,
+    email VARCHAR(32) NOT NULL,
+    senha VARCHAR(18) NOT NULL
+);
+
+CREATE TABLE quadrinhos (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    nomequadrinho VARCHAR(32) NOT NULL,
+    numerodepaginas INT NOT NULL,
+    capaquadrinho BLOB NOT NULL,
+    tipor ENUM('JPEG', 'IMAGE') NOT NULL
+);
