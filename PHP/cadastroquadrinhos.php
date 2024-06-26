@@ -35,16 +35,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $upload = new UploadCapa($capaquadrinho);
     $upload->validarCapa();
 
-    // Conectando ao banco de dados
+    
     $conn = new mysqli('localhost', 'root', '190304', 'batcadastro');
     if ($conn->connect_error) {
         die("Erro de conexão: " . $conn->connect_error);
     }
 
-    // Lendo a imagem como conteúdo binário
+    
     $capaBinaria = file_get_contents($capaquadrinho['tmp_name']);
 
-    // Usando prepared statement para inserir os dados
+    
     $query = $conn->prepare("INSERT INTO quadrinhos (nomequadrinho, numerodepaginas, capaquadrinho) VALUES (?, ?, ?)");
     $query->bind_param("sis", $nomequadrinho, $numeropaginas, $capaBinaria);
 
