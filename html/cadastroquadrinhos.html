@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batcadastro</title>
+    <link rel="stylesheet" href="quadrinho.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <form action="cadastroquadrinhos.php" method="post" class="form" enctype="multipart/form-data">
+            <img src="batman.jpg-removebg-preview.png" alt="Batman Logo" class="logo"> 
+            <h1 class="title">Cadastre seu quadrinho</h1>
+
+            <label for="nome_do_quadrinho">Nome do quadrinho</label>
+            <input type="text" id="nome_do_quadrinho" name="nome_do_quadrinho" required>
+
+            <label for="numero_de_paginas">Número de páginas</label>
+            <input type="text" id="numero_de_paginas" name="numero_de_paginas" required>
+
+            <label for="capa_do_quadrinho">Capa do quadrinho</label>
+            <input type="file" id="capa_do_quadrinho" name="capa_do_quadrinho" required>
+
+            <input type="submit" value="Enviar" class="submit">
+        </form>
+    </div>
+
+    <a href="quadrinhos_cadastrados.php" class="link">Ver Quadrinhos Cadastrados</a>
+</body>
+</html>
